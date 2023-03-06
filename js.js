@@ -1,20 +1,18 @@
 "use strict";
-/*
-ЗАДАЧА:
-Создайте игру "Собери алфавит"
-
-ПОДСКАЗКИ:
-
-1-Не думайте о сокращении кода. Если будет очень много повторений однотипного кода - это нормально. Первая задача понимать логику языка, а только после оптимизировать его.
-2-Помните про методы переноса элемента из одного места в другое(before, after и т.д.)
-3-Помните про свойства, получения соседних элементов (previousElementSibling, previousElementSibling и т.д)
-
-*/
 
 const audioClick = new Audio("audio/Mountain Audio - Menu Click.mp3");
 const boxes = document.querySelector(".boxes");
 let newLetters;
 const audioWin = new Audio("audio/huge win.wav");
+
+
+/* Ниже код делегирования событий
+вешаю обработчик событий на родителя(boxes),
+далее прописываю объект события (e.target).
+https://www.youtube.com/watch?v=KjacEXfpleU - ссылка на хороший урок по
+событиям
+*/
+
 
 boxes.addEventListener("click", (e) => {
   if (e.target.previousElementSibling != null) {
